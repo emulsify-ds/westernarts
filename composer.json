@@ -11,7 +11,6 @@
     ],
     "require": {
         "php": ">=7.2",
-        "composer/installers": "^1.0.20",
         "cweagans/composer-patches": "^1.0",
         "drupal/core-composer-scaffold": "^8.8.1",
         "drupal/config_direct_save": "^1.0",
@@ -25,13 +24,11 @@
         "pantheon-systems/drupal-integrations": "^8",
         "zaporylie/composer-drupal-optimizations": "^1.0",
         "drupal/admin_toolbar": "^2.0",
-        "drupal/config_installer": "^1.0",
         "drupal/menu_block": "^1.5",
-        "fourkitchens/sous-drupal-distro": "dev-master",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "behat/behat": "3.*",
@@ -121,7 +118,6 @@
         "drupal-scaffold": {
             "allowed-packages": [
                 "pantheon-systems/drupal-integrations"
-                "fourkitchens/sous-drupal-distro"
             ],
             "locations": {
                 "web-root": "./web"
