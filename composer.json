@@ -1,8 +1,8 @@
 {
-    "name": "pantheon-systems/example-drops-8-composer",
-    "description": "Install drops-8 with Composer on Pantheon.",
+    "name": "fourkitchens/sous-drupal-project",
+    "description": "Starter project for Sous a Drupal distribution featuring a theme based on Emulsify Design System.",
     "type": "project",
-    "license": "MIT",
+    "license": "GPL-2.0-or-later",
     "repositories": [
         {
             "type": "composer",
@@ -10,8 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.0.8",
-        "composer/installers": "^1.0.20",
+        "php": ">=7.2",
         "cweagans/composer-patches": "^1.0",
         "drupal/core-composer-scaffold": "^8.8.1",
         "drupal/config_direct_save": "^1.0",
@@ -23,7 +22,13 @@
         "rvtraveller/qs-composer-installer": "^1.1",
         "drupal/core-recommended": "^8.8",
         "pantheon-systems/drupal-integrations": "^8",
-        "zaporylie/composer-drupal-optimizations": "^1.0"
+        "zaporylie/composer-drupal-optimizations": "^1.0",
+        "drupal/admin_toolbar": "^2.0",
+        "drupal/menu_block": "^1.5",
+        "oomphinc/composer-installers-extender": "^1.1",
+        "vlucas/phpdotenv": "^2.4",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3"
     },
     "require-dev": {
         "behat/behat": "3.*",
@@ -80,9 +85,24 @@
         ]
     },
     "extra": {
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
+        "installer-types": [
+            "npm-asset",
+            "bower-asset"
+        ],
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/libraries/masonry": [
+                "bower-asset/masonry-layout"
+            ],
+            "web/libraries/{$name}": [
+                "type:drupal-library",
+                "type:bower-asset",
+                "type:npm-asset"
+            ],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
@@ -102,9 +122,22 @@
             "locations": {
                 "web-root": "./web"
             },
+            "excludes": [
+                ".eslintrc"
+            ],
             "file-mapping": {
                 "[project-root]/.editorconfig": false
-            }            
+            },
+            "initial": {
+                ".eslintignore": ".eslintignore",
+                ".eslintrc.json": ".eslintrc.json",
+                ".gitattributes": ".gitattributes",
+                ".htaccess": ".htaccess",
+                "robots.txt": "robots.txt",
+                "sites/example.settings.local.php": "sites/example.settings.local.php",
+                "sites/example.sites.php": "sites/example.sites.php"
+            },
+            "omit-defaults": false         
         }
     },
     "config": {
@@ -112,7 +145,7 @@
         "preferred-install": "dist",
         "sort-packages": true,
         "platform": {
-            "php": "7.0.8"
-        }
+            "php": "7.2"
+        }   
     }
 }

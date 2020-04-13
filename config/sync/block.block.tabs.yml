@@ -1,0 +1,20 @@
+uuid: 5f37f9cd-91ba-44b6-96b0-7c0c7145c8a2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - western_arts
+id: tabs
+theme: western_arts
+region: content
+weight: -1
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

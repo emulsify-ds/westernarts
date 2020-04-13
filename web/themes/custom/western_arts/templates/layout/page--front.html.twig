@@ -1,0 +1,33 @@
+{% if page.sidebar|render %} {# this may or may not correctly filter sidebar #}
+  {% set sidebar = TRUE %}
+{% endif %}
+
+{% embed "@wa_templates/wa-full-bleed.twig" %}
+  {% block page_header %}
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+    {% include "@wa_molecules/hero/wa-hero.twig" %}
+  {% endblock %}
+
+  {% block page_system %}
+    {{ page.breadcrumb }}
+    {{ page.highlighted }}
+    {{ page.help }}
+    {{ messages }}
+  {% endblock %}
+
+  {% block page_sidebar %}
+    {{ page.sidebar }}
+  {% endblock %}
+
+  {% block page_content %}
+    {{ page.content }}
+  {% endblock %}
+
+  {% block page_footer %}
+    {% if page.footer %}
+      {{ page.footer }}
+    {% endif %}
+  {% endblock %}
+{% endembed %}

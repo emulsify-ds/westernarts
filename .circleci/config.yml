@@ -129,6 +129,11 @@ jobs:
       - attach_workspace:
           at: /tmp
 
+      # Remove local settings.
+      - run:
+          name: Remove local settings.
+          command: rm -f ./web/sites/default/settings.local.php
+
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment

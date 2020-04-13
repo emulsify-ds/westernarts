@@ -1,0 +1,27 @@
+{#
+  Variables:
+  art_grid_base_class
+  art_grid_title
+#}
+{% set art_grid_base_class = 'art-grid' %}
+
+<section {{ bem(art_grid_base_class) }}>
+  {% include "@atoms/text/headings/_heading.twig" with {
+    heading_base_class: 'title',
+    heading_blockname: art_grid_base_class,
+    heading_level: '2',
+    heading: art_grid_title,
+  } %}
+  <div {{ bem('grid', [], art_grid_base_class) }}>
+    {% block art_grid %}
+      {% for art_grid_item in art_grid_items %}
+        {% include "@wa_organisms/art-grid/_art-grid-item.twig" with {
+          art_grid_item_img_url: art_grid_item.art_grid_item_img_url,
+          art_grid_item_title_small: art_grid_item.art_grid_item_title_small,
+          art_grid_item_title: art_grid_item.art_grid_item_title,
+          art_grid_item_subtitle: art_grid_item.art_grid_item_subtitle,
+        } %}
+      {% endfor %}
+    {% endblock %}
+  </div>
+</section>
