@@ -117,7 +117,8 @@
         },
         "drupal-scaffold": {
             "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
+                "pantheon-systems/drupal-integrations",
+                "fourkitchens/sous-drupal-distro"
             ],
             "locations": {
                 "web-root": "./web"
