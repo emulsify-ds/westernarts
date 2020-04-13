@@ -755,7 +755,7 @@ $settings['entity_update_backup'] = TRUE;
 #
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
-
+}
 
 /**
  * Load services definition file.
@@ -788,5 +788,4 @@ include __DIR__ . "/settings.pantheon.php";
 $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
-
 }
