@@ -132,7 +132,7 @@ jobs:
       # Remove local settings.
       - run:
           name: Remove local settings.
-          command: rm ./web/sites/default/settings.local.php
+          command: rm -f ./web/sites/default/settings.local.php
 
       - run:
           # Set TERMINUS_ENV and related environment variables.
