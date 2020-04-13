@@ -7,6 +7,14 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:fourkitchens/sous-drupal-distro.git"
+        },
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
         }
     ],
     "require": {
@@ -25,6 +33,7 @@
         "zaporylie/composer-drupal-optimizations": "^1.0",
         "drupal/admin_toolbar": "^2.0",
         "drupal/menu_block": "^1.5",
+        "fourkitchens/sous-drupal-distro": "dev-master",
         "oomphinc/composer-installers-extender": "^1.1",
         "vlucas/phpdotenv": "^2.4",
         "webflo/drupal-finder": "^1.0.0",
@@ -50,12 +59,15 @@
     "conflict": {
             "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "classmap": [
             "scripts/composer/ScriptHandler.php"
-        ]
+        ],
+        "psr-4": {
+            "Sous\\" : "sous"
+        }
     },
     "scripts": {
         "build-assets": [
@@ -117,7 +129,8 @@
         },
         "drupal-scaffold": {
             "allowed-packages": [
-                "pantheon-systems/drupal-integrations"
+                "pantheon-systems/drupal-integrations",
+                "fourkitchens/sous-drupal-distro"
             ],
             "locations": {
                 "web-root": "./web"
