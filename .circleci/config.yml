@@ -134,6 +134,11 @@ jobs:
           name: Remove local settings.
           command: rm -f ./web/sites/default/settings.local.php
 
+      # Build theme.
+      - run:
+          name: Build Theme.
+          command: ./.ci/scripts/prepare-theme.sh
+
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
