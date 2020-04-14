@@ -137,7 +137,7 @@ jobs:
       # Build theme.
       - run:
           name: Build Theme.
-          command: ./.ci/scripts/prepare-theme.sh
+          command: ./.ci/build/theme
 
       - run:
           # Set TERMINUS_ENV and related environment variables.
