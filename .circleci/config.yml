@@ -139,6 +139,11 @@ jobs:
           name: Build Theme.
           command: ./.ci/build/theme
 
+      # Move Storybook instance
+      - run:
+          name: Move Storybook.
+          command: mv ./web/themes/custom/western_arts/.out ./web/storybook
+
       - run:
           # Set TERMINUS_ENV and related environment variables.
           # https://github.com/pantheon-systems/docker-build-tools-ci/blob/6.x/scripts/set-environment
