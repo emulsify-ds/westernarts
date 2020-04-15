@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eo pipefail
+
+#
+# This script performs all tasks related to the site theme.
+#
+
+echo "Compiling theme..."
+
+# Compile theme files and pattern lab.
+cd ~/project-build/web/themes/custom/western_arts
+
+echo -e "Step 1: sudo npm install --unsafe-perm --no-save"
+yarn
+yarn build
