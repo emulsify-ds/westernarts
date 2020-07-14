@@ -3,7 +3,7 @@ art_grid_items:
   - art_grid_item_img_url: 'https://media.giphy.com/media/uOQqRWeWE9QUE/source.gif'
     art_grid_item_title: 'Photo Lectures Start This Week'
   - art_grid_item_img_url: 'https://source.unsplash.com/v1VkxhTSh88/600x400'
-    art_grid_item_title: 'No Deep Kissing:'
+    art_grid_item_title: 'No Fixed Walls:'
     art_grid_item_subtitle: 'Sculpture MFA Thesis Show Group 1'
   - art_grid_item_img_url: 'https://source.unsplash.com/xb0wLfZH9Zo/600x400'
     art_grid_item_title_small: true
